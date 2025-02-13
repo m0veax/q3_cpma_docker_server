@@ -1,0 +1,10 @@
+services:
+  q3:
+    build: .
+    tty: true
+    stdin_open: true
+    ports:
+      - 27960:27960/udp
+    volumes:
+      - ./custom_start.sh:/opt/q3/custom_start.sh
+

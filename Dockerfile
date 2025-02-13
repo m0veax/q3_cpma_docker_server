@@ -36,14 +36,8 @@ RUN unzip cnq3_server.zip -d /opt/q3
 # unzip server scripts
 RUN unzip server-scripts.zip -d /opt/q3
 
-RUN ["chmod", "+x", "/opt/q3/custom_start.sh"]
-RUN ["chmod", "+x", "/opt/q3/start_server_1.sh"]
-RUN ["chmod", "+x", "/opt/q3/cnq3-server-x64"]
+RUN chmod +x /opt/q3/custom_start.sh /opt/q3/start_server_1.sh /opt/q3/cnq3-server-x64 
 
-#WORKDIR /opt/q3
+WORKDIR /opt/q3
 
-CMD ["bash", "-c", "/opt/q3/start_server_1.sh"]
-CMD ["sh", "-c", "sleep infinity"]
-#ENTRYPOINT ["bash", "-c", "/opt/q3/custom_start.sh"]
-#CMD ["sh", "sleep", "30000"]
-#ENTRYPOINT ["/bin/sh","-c","sleep infinity"]
+ENTRYPOINT ["bash", "-c", "/opt/q3/custom_start.sh"]

@@ -14,6 +14,8 @@ cd /opt/q3
 +set ttycon 1 \
 +set developer 0 \
 +exec server.cfg \
-+map q3dm6 2>&1
++map q3dm6 &
+
+tail -f /proc/1/fd/1
 
 
