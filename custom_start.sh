@@ -11,9 +11,11 @@ cd /opt/q3
 +set sv_master5 master.qtracker.com:27900 \
 +set fs_game cpma \
 +set net_port 27960 \
-+set ttycon 1 \
++set ttycon 0 \
 +set developer 0 \
 +exec server.cfg \
-+map q3dm6 2>&1
++map q3dm6 &
+
+tail -f /proc/1/fd/1
 
 
